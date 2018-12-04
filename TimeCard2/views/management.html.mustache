@@ -1,0 +1,72 @@
+<!--This file shows the employees who are listed in the company-->
+<html>
+<head>
+    <title>Manage Employee</title>                 <!--Title of the page-->
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="../public/stylesheet.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+<div id="header">                                  <!--Header of the page-->
+    <a href="/Employees" id="logo">3JR <img src="../public/clock.png" id="clock-image"> </a>
+    <ul id="menu">                                 <!--Menu of the page-->
+        <li><a href="/Employees/logon"><img src="../public/home.png" id="home"> <span>Home</span></a></li>
+        <li><a href="/employees/clockin-out"><span>Clock In/Out</span></a></li>
+        <li><a href="/employees/manage"><span>Manage</span></a></li>
+        <li><a href="/employees/logout"><span>Logout</span></a></li>
+    </ul>
+</div>
+
+<h1 id="title">Employees</h1>                      <!--Title of the table-->
+
+<table>
+    <thead>                                        <!--Table header-->
+    <tr>
+        <th>First Name</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Position</th>
+        <th>Edit Employee</th>
+        <th>Delete Employee</th>
+    </tr>
+    </thead>
+
+    <tfoot>                                        <!--Employee list-->
+    {{#employees}}
+    <tr>
+        <td class="fields">{{FirstName}}</td>
+        <td class="fields">{{dob}}</td>
+        <td class="fields">{{gender}}</td>
+        <td class="fields">{{Position}}</td>
+        <td class="fields"><button id="Edit" type="submit">
+        <a href="/employees/{{id}}/edit">Edit</a>
+        </button></td>                             <!--Button to edit the employee information-->
+        <td class="fields"><button id="Delete" type="submit" >
+        <a href="/employees/{{id}}/delete">Delete</a>
+        </button></td>                             <!--Button to delete the employee information-->
+    </tr>
+    {{/employees}}
+    </tfoot>
+</table>
+
+<div class="btngroup">
+    <button id="More" type="submit" >
+        <a href="?pageToken={{next_page_token}}">More Employees</a>
+    </button>                                      <!--Button to go to the next page when more than ten employees exist-->
+    <button id="Add" type="submit" >
+        <a href="/employees/add">Add Employee</a>
+    </button>                                      <!--Button to add a new employee-->
+</div>
+
+<div class= "footer">                              <!--Footer of the page-->
+    <ul class="footer-list">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Career</a></li>
+    </ul>
+    <div class="footer-copyright">&copy; 2018 3JR.com. All Rights Reserved.</div>
+</div>
+{{user}}
+</body>
+</html>

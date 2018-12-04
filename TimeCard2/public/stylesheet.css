@@ -1,0 +1,459 @@
+/*Style for the webpage layout and header*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300);
+@import url(https://fonts.googleapis.com/css?family=Squada+One);
+body {
+    padding: 10px 60px;
+    background: url("light-grey.png");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+
+#header {
+    background: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    height: 150px;
+    margin-top: -10px;
+    padding-left: 50px;
+    margin-left: -60px;
+    position: fixed;
+}
+
+#logo {
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 120px;
+    font-weight: 800;
+    letter-spacing: -3px;
+    line-height: 1;
+    text-shadow: #EDEDED 3px 2px 0;
+    position: relative;
+    color: #6b6a6a;
+}
+
+#logo:after {
+    content:"3JR";
+    position: absolute;
+    left: 8px;
+    top: 32px;
+}
+
+#logo:after {
+    background-image: -webkit-linear-gradient(left top, transparent 0%, transparent 25%, #555 25%, #555 50%, transparent 50%, transparent 75%, #555 75%);
+    background-size: 4px 4px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: -5;
+    display: block;
+    text-shadow: none;
+}
+
+#clock-image {
+    height: 120px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+/*Style for the website menu*/
+#menu {
+    width: 100%;
+    height: 42px;
+    list-style: none;
+    margin: -85px 0 0 370px; padding: 10px 10px;
+}
+
+#menu li {
+    display: inline-block;
+    width: 160px;
+    margin: 0 20px;
+    position: relative;
+    -webkit-transform: skewy(-3deg);
+    -webkit-backface-visibility: hidden;
+    -webkit-transition: 200ms all;
+}
+
+#menu li a {
+    font-weight: 800;
+    display: block;
+    background: #f8f9fa;
+    padding: 10px;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    text-shadow: 1px 1px 0px #FFF, 2px 2px 0px #999, 3px 3px 0px #FFF;
+    -webkit-transition: 1s all;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.4) inset, 0 0 20px -5px rgba(0,0,0,.4), 0 0 0px 3px #FFF inset;
+    color: rgba(82,82,82,1);
+    font-family: Futura;
+    text-align: center;
+    font-size: 20px;
+}
+
+#menu li:hover {
+    width: 203px;
+    margin: 0 -5px;
+}
+
+#menu a:hover {
+    color: darkgray;
+}
+
+#menu li:after,
+#menu li:before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 100%;
+    background: #BBB;
+    -webkit-transform: skewY(8deg);
+    x-index: -3;
+    border-radius: 4px;
+}
+
+#menu li:after {
+    background-image: -webkit-linear-gradient(left, transparent 0%, rgba(0,0,0,.4) 100%);
+    right: 0;
+    top: -4px;
+}
+
+#menu li:before {
+    left: 0;
+    bottom: -4px;
+    background-image: -webkit-linear-gradient(right, transparent 0%, rgba(0,0,0,.4) 100%);
+}
+
+#home {
+    height: 22px;
+    margin-bottom: 3px;
+}
+
+/*Style for the 'Clock In' and 'Clock Out' page*/
+.clock {
+    font-family: Futura;
+    text-align: center;
+    height: 70px;
+    width: 30%;
+    margin-top: 290px;
+    margin-left: 35%;
+    margin-right: auto;
+    padding: 10px;
+    font-size: 35px;
+    border-radius: 12px;
+    background: rgb(248, 249, 250);
+    color: #424242;
+}
+
+#clock-out {
+    margin-top: 20px;
+}
+
+.clock:hover {
+    background-color:  lightgray;
+}
+
+#timepunches {
+    margin-left: 370px;
+    border-radius: 20px;
+    margin-top: 40px;
+}
+
+/*Style for the footer of the page*/
+.footer {
+    position: fixed;
+    bottom: 0%;
+    text-align: right;
+    margin-bottom: -10px;
+    padding-top: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    padding-left: 50px;
+    margin-left: -60px;
+}
+
+.footer-copyright {
+    text-align: left;
+    font-size: 120%;
+    font-family: Rockwell;
+    position: fixed;
+    bottom: 0%;
+    margin-bottom: 5px;
+}
+
+.footer-list {
+    margin-left: 360px;
+}
+
+.footer ul li {
+    display: inline;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    font-family: Rockwell;
+    padding: 0 4em 0 4em;
+    font-size: 120%;
+    color: #333333;
+}
+
+.footer ul li a:hover {
+    color: darkgray;
+}
+
+/*Style for title of the form in several pages*/
+#title {
+    margin: auto 0 -10px 0;
+    padding: 170px 0 20px 0;
+    text-align: center;
+    font-size: 40px;
+    font-family: Rockwell;
+    color: rgba(56,56,56,1);
+}
+
+/*Style for the employee data form*/
+fieldset {
+	width: 500px;
+	background: rgba(221,221,221,0.6);
+    position: relative;
+}
+
+.profileField {
+	float: left;
+}
+
+.profileField span {
+	float: left;
+	width: 43%;
+	margin-right: 1em;
+	padding-top: 0.3em;
+	text-align: right;
+	color: #3b3b3b;
+}
+
+.Profile input[type='text'], .Profile input[type='date'] {
+	margin: 0 5px 5px 0;
+	padding: 2px;
+    border-radius: 10px;
+}
+
+#top-field {
+    margin-top: 40px;
+}
+
+.history {
+	float: right;
+}
+
+.history span {
+	float: left;
+	width: 38%;
+	margin-right: 1em;
+	padding-top: 0.3em;
+	text-align: right;
+	color: #3b3b3b;
+}
+
+.history input[type='textarea'] {
+    margin: 0 10px 0 0;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+legend {
+    font-family: Futura;
+    position:absolute;
+    top:5px;
+    left:10px;
+}
+
+#timeManage {
+    margin-top: 20px;
+    margin-left: 170px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#timeManage a {
+    color: #3e3e3e;
+    text-shadow: none;
+    text-decoration: none;
+}
+
+#timeManage:hover {
+    background-color:  darkgray;
+    text-decoration: none;
+}
+
+.update {
+    border-radius: 20px;
+    text-shadow: none;
+    position: absolute;
+    bottom: 90px;
+    right: 65px;
+    padding: 10px;
+    font-size: 20px;
+    color: #3e3e3e;
+}
+
+.update:hover {
+    background-color:  darkgray;
+}
+
+/*Style for the employee list on management.html.mustache*/
+table {
+    font-family: Futura;
+    border-collapse: collapse;
+    width: 98%;
+    background-color: #f8f9fa1c;
+	margin-left: auto;
+	margin-right: auto;
+    text-align: center;
+    color: rgba(43,43,43,1);
+}
+
+td, th {
+    border: 1px solid black;
+    text-align: center;
+	width: 60px;
+	padding: 8px 15px;
+}
+
+.fields #Edit, #Delete {
+	border-radius: 10px;
+}
+
+.fields #Edit a, .fields #Delete a {
+    color: rgba(56,56,56,1);
+    text-decoration: none;
+}
+
+.fields #Edit a:hover, .fields #Delete a:hover {
+    color: darkgray;
+}
+
+.btngroup {
+	margin: 20px 100px auto 350px;
+}
+
+.btngroup button {
+	font-size: 24px;
+	margin: 0 20px;
+	border-radius: 10px;
+    font-family: Futura;
+}
+
+.btngroup button:hover {
+	background-color:  darkgray;
+}
+
+#More a, #Add a {
+	color: rgba(56,56,56,1);
+    text-decoration: none;
+}
+
+/*Style for login and registration*/
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login-page {
+    width: 360px;
+    padding: 20% 0 0;
+    margin: -500px 250px auto auto;
+}
+.form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    margin-top: -10px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 20px;
+}
+.form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 10px;
+}
+.form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: rgba(107,106,106,1.0);
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.form button:hover,.form button:active,.form button:focus {
+    background: black;
+}
+.form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+.form .message a {
+    color: rgba(51,51,51,1.0);
+    text-decoration: none;
+}
+.form .register-form {
+    display: none;
+}
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 300px;
+    margin: 0 auto;
+}
+.container:before, .container:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.container .info {
+    margin: 50px auto;
+    text-align: center;
+}
+.container .info h1 {
+    margin: 0 0 15px;
+    padding: 0;
+    font-size: 36px;
+    font-weight: 300;
+    color: #1a1a1a;
+}
+.container .info span {
+    color: #4d4d4d;
+    font-size: 12px;
+}
+.container .info span a {
+    color: #000000;
+    text-decoration: none;
+}
+.container .info span .fa {
+    color: #EF3B3A;
+}
+
+#block-one {
+    margin: 260px auto auto 250px;
+}
+
+#block-one .user {
+    height: 250px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}

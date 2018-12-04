@@ -1,0 +1,161 @@
+<!--This file is the form for adding or editing the employee information-->
+<html>
+<head>
+    <title>Employee Details</title>                                                                    <!--Title of the page-->
+    <link rel="stylesheet" type="text/css" href="../public/stylesheet.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <script>
+    function checkForm() {
+
+        var firstname = document.getElementById("FirstName").value;
+        if (firstname == "" || firstname == null) {
+            // If first name field is empty, an alert will appear and prevent user to update employee profile
+            alert("Please enter the first name!");
+            return false;
+        }
+        if (firstname.search(/^[a-zA-Z]+$/) === -1) {
+            // If inputted first name consists of other than an alphabetical character,
+            // an alert will appear and prevent user to update employee profile
+            alert("Please enter valid first name!");
+            return false;
+        }
+
+        var lastname = document.getElementById("LastName").value;
+        if (lastname == "" || lastname == null) {
+            // If last name field is empty, an alert will appear and prevent user to update employee profile
+            alert("Please enter the last name!");
+            return false;
+        }
+        if (lastname.search(/^[a-zA-Z]+$/) === -1) {
+            // If inputted last name consists of other than an alphabetical character,
+            // an alert will appear and prevent user to update employee profile
+            alert("Please enter valid last name!");
+            return false;
+        }
+
+        var dob = document.getElementById("dob").value;
+        if (dob == "" || dob == null) {
+            // If date of birth field is empty, an alert will appear and prevent user to update employee profile
+            alert("Please enter the date of birth!");
+            return false;
+        }
+
+        var Address = document.getElementById("Address").value;
+        if (Address == "" || Address == null) {
+            // If address field is empty, an alert will appear and prevent user to update employee profile
+            alert("Please enter your address!");
+            return false;
+        }
+
+        var PhoneNo = document.getElementById("PhoneNo").value;
+        if (PhoneNo == "" || PhoneNo == null) {
+            // If phone number field is empty, an alert will appear and prevent user to update employee profile
+            alert("Please enter the phone number!");
+            return false;
+        }
+        if (PhoneNo.search(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/) === -1) {
+            // If inputted phone number consists of other than a numerical character,
+            // an alert will appear and prevent user to update employee profile
+            alert("Please enter valid phone number!");
+            return false;
+        }
+
+        var Email = document.getElementById("Email").value;
+        if (Email == "" || Email == null) {
+            // If email field is empty, an alert will appear and prevent user to update employee profile
+            alert("Please enter the email address!");
+            return false;
+        }
+
+        var Position = document.getElementById("Position").value;
+        if (Position == "" || Position == null) {
+            // If position field is empty, an alert will appear and prevent user to update employee profile
+            alert("Please enter the position name!");
+            return false;
+        }
+        if (Position.search(/^[a-zA-Z]+$/) === -1) {
+            // If inputted position consists of other than an alphabetical character,
+            // an alert will appear and prevent user to update employee profile
+            alert("Please enter valid position name!");
+            return false;
+        }
+    }
+    </script>
+</head>
+
+
+<body>
+<div id="header">                                                                                      <!--Header of the page-->
+    <a href="/Employees" id="logo">3JR <img src="../public/clock.png" id="clock-image"> </a>
+    <ul id="menu">                                                                                     <!--Menu of the page-->
+        <li><a href="/Employees/logon"><img src="../public/home.png" id="home"> <span>Home</span></a></li>
+        <li><a href="/employees/clockin-out"><span>Clock In/Out</span></a></li>
+        <li><a href="/employees/manage"><span>Manage</span></a></li>
+        <li><a href="/employees/logout"><span>Logout</span></a></li>
+    </ul>
+</div>
+
+<h1 id="title">{{action}} employee</h1>                                                                <!--Title of the form-->
+
+<form class="Profile" method="post" onsubmit="return checkForm()">
+    <!--Form will check the information provided upon submission through checkForm() function-->
+    <fieldset class="profileField">
+        <legend>Profile</legend>
+        <span id="top-field">Username:</span>
+        <input type="text" name="username" id="top-field" value="{{employee.username}}"><br/>          <!--Stores the username-->
+        <span>First Name:</span>
+        <input type="text" name="FirstName" id="FirstName" value="{{employee.FirstName}}"><br/>        <!--Stores the first name-->
+        <span>Last Name:</span>
+        <input type="text" name="LastName" id="LastName" value="{{employee.LastName}}"><br/>           <!--Stores the last name-->
+        <span>Date of Birth:</span>
+        <input type="date" name="dob" id="dob" value="{{employee.dob}}"><br/>                          <!--Stores the date of birth-->
+        <span name="gender" id="gender" value="{{employee.gender}}">Gender:</span>                     <!--Stores the gender-->
+        <input class="w3-radio" type="radio" name="gender" value="Male" checked>
+        <label>Male</label>
+        <input class="w3-radio" type="radio" name="gender" value="Female">
+        <label>Female</label>
+        </br>
+        <span>Address:</span>
+        <input type="text" name="Address" id="Address" value="{{employee.Address}}"><br/>              <!--Stores the address-->
+        <span>Phone Number:</span>
+        <input type="text" name="PhoneNo" id="PhoneNo" value="{{employee.PhoneNo}}"><br/>              <!--Stores the phone number-->
+        <span>Email Address:</span>
+        <input type="text" name="Email" id="Email" value="{{employee.Email}}"><br/>                    <!--Stores the email address-->
+        <span>Dependent(s):</span>
+        <input type="text" name="Dependents" id="Dependents" value="{{employee.Dependents}}"><br/>     <!--Stores the dependent(s) information-->
+        <span>Position:</span>
+        <input type="text" name="Position" id="Position" value="{{employee.Position}}"><br/>           <!--Stores the employee position-->
+    </fieldset>
+
+    <fieldset class="history">
+        <legend>Working History</legend>
+        <span id="top-field">SSN:</span>
+        <input type="text" name="SSN" id="top-field" value="{{employee.SSN}}"><br/>                    <!--Stores the SSN-->
+        <span id="Salary">Salary:</span>
+        <input type="text" name="Salary" id="Salary" value="{{employee.Salary}}"><br/>                 <!--Stores the salary-->
+        <span>Start Date:</span>
+        <input type="date" name="StartDate" id="StartDate" value="{{employee.StartDate}}"><br/>        <!--Stores the start date-->
+        <span>Benefits:</span>
+        <input type="textarea" name="Benefits" value="{{employee.Benefits}}"><br/>                     <!--Stores the benefits-->
+        <span>Paid Leave:</span>
+        <input type="text" name="PaidLeave" value="{{employee.PaidLeave}}"><br/>                       <!--Stores the paid leave-->
+        <span>Unpaid Leave:</span>
+        <input type="text" name="UnpaidLeave" value="{{employee.UnpaidLeave}}"><br/>                   <!--Stores the unpaid leave-->
+        <button id="timeManage"><a href="#">Time Management</a></button>                               <!--Button to view the time saved-->
+    </fieldset>
+    <input type="submit" class="update" id="update" value="Update">                                    <!--Button to submit the form update-->
+</form>
+
+<div class= "footer">                                                                                  <!--Footer of the page-->
+    <ul class="footer-list">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Career</a></li>
+    </ul>
+    <div class="footer-copyright">&copy; 2018 3JR.com. All Rights Reserved.</div>
+</div>
+{{user}}
+</body>
+</html>

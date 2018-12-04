@@ -1,0 +1,58 @@
+{
+  "name": "GAE-NodeJs-Demo",
+  "version": "1.0.0",
+  "description": "Sample for running Node.js applications on Google Cloud Platform",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "e2e": "repo-tools test deploy",
+    "test": "repo-tools test app",
+    "cover": "nyc --cache npm test; nyc report --reporter=html"
+  },
+  "author": "National University",
+  "contributors": [
+    {
+      "name": "Tuan Do",
+      "email": "tuan.do@natuniv.edu"
+    }
+  ],
+  "cloud-repo-tools": {
+    "requiresKeyFile": true,
+    "requiresProjectId": true,
+    "test": {
+      "app": {
+        "args": [
+          "app.js"
+        ],
+        "msg": "Student Registration!"
+      }
+    }
+  },
+  "license": "Apache-2.0",
+  "semistandard": {
+    "globals": [
+      "after",
+      "afterEach",
+      "before",
+      "beforeEach",
+      "describe",
+      "it"
+    ]
+  },
+  "dependencies": {
+    "@google-cloud/datastore": "^2.0.0",
+    "bcrypt": "^3.0.2",
+    "body-parser": "^1.18.3",
+    "express": "4.16.2",
+    "mustache": "^2.3.0",
+    "nconf": "0.10.0"
+  },
+  "devDependencies": {
+    "@google-cloud/nodejs-repo-tools": "^3.1.0",
+    "ava": "0.25.0",
+    "supertest": "3.0.0"
+  },
+  "engines": {
+    "node": ">=4.3.2"
+  }
+}

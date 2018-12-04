@@ -1,0 +1,56 @@
+<!--This file lets the employees clock in and clock out-->
+<html>
+<head>
+    <title>Clock In/Out</title>             <!--Title of the page-->
+    <link rel="stylesheet" type="text/css" href="../public/stylesheet.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script type="text/javascript" src="../public/index.js"></script>
+
+    <script type="text/javascript">         // Javascript to validate clock in and clock out page
+        function clockin() {
+            document.getElementById('timepunches').innerHTML = Date() + ' Your Clock-in time was saved.'
+            alert(Date() + ' Your Clock-in time was saved.');
+            // There will be an alert displaying the clock-in time and date
+            // The information is also displayed in the textarea under the buttons
+        }
+        function clockout() {
+            document.getElementById('timepunches').innerHTML = Date() + ' Your Clock-out time was saved.'
+            alert(Date() + ' Your Clock-out time was saved.');
+            // There will be an alert displaying the clock-out time and date
+            // The information is also displayed in the textarea under the buttons
+        }
+    </script>
+</head>
+
+<body>
+<div id="header">                           <!--Header of the page-->
+    <a href="/Employees" id="logo">3JR <img src="../public/clock.png" id="clock-image"> </a>
+    <ul id="menu">                          <!--Menu of the page-->
+        <li><a href="/Employees/logon"><img src="../public/home.png" id="home"> <span>Home</span></a></li>
+        <li><a href="/employees/clockin-out"><span>Clock In/Out</span></a></li>
+        <li><a href="/employees/manage"><span>Manage</span></a></li>
+        <li><a href="/employees/logout"><span>Logout</span></a></li>
+    </ul>
+</div>
+
+<button type="button" onclick="clockin()" class="clock" id="clock-in">Clock In</button>
+<!--Clock In button and its call on clockin() function-->
+<br />
+<br />
+<button type="button" onclick="clockout()" class="clock" id="clock-out">Clock Out</button>
+<!--Clock Out button and its call on clockout() function-->
+<textarea id="timepunches" rows="4" cols="50"></textarea>
+<!--Textbox that shows the employee their clockin/out time after pressing either button-->
+
+
+<div class="footer">                       <!--Footer of the page-->
+    <ul class="footer-list">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Career</a></li>
+    </ul>
+    <div class="footer-copyright">&copy; 2018 3JR.com. All Rights Reserved.</div>
+</div>
+</body>
+</html>

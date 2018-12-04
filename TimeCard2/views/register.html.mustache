@@ -1,0 +1,59 @@
+<!--This file is to register a new user-->
+<html>
+<head>
+    <title>Register</title>            <!--Title of the page-->
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="../public/stylesheet.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <script type="text/javascript">    //Javascript to validate registration form below
+        function validation() {
+            var p = document.forms["Registerform"]["password"].value;
+
+            if (p == "") {
+                alert("please enter your password!");
+                // If password field is empty, an alert will appear and prevent user to register
+                return false;
+            }
+            if (p.length <6) {
+                // If inputted password is less than 6 characters long, an alert will appear and prevent user to register
+                alert("Please enter at least 6 characters!");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+<div id="header">                     <!--Header of the page-->
+    <a href="/Employees" id="logo">3JR <img src="../public/clock.png" id="clock-image"> </a>
+</div>
+
+<form id="block-one"></form>
+<div class="Register-page">
+    <div class="form">
+
+        <form name="Registerform" action="/employees" class="Register" onsubmit="return validation()">
+            <!--Form to register a new user that will validate information inputted by validation() function-->
+            <input type="text" placeholder="Name" name="username">              <!--Records the username-->
+            <input type="text" placeholder="Email address" name="Email">        <!--Records the email address-->
+            <input type="password" placeholder="Password" name="password">      <!--Records the password-->
+            <button onsubmit="alert('Welcome to 3JR')">submit</button>          <!--Submits the form-->
+            <p class="message">Already registered? <a href="/employees">Sign In</a></p>
+            <!--Link which lets user who is registered in the system to the login page-->
+        </form>
+
+    </div>
+</div>
+
+<div class= "footer">                 <!--Footer of the page-->
+    <ul class="footer-list">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Career</a></li>
+    </ul>
+    <div class="footer-copyright">&copy; 2018 3JR.com. All Rights Reserved.</div>
+</div>
+</body>
+</html>

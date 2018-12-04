@@ -1,0 +1,76 @@
+<html>
+<head>
+    <title>Employee Details</title>
+    <link rel="stylesheet" type="text/css" href="../public/stylesheet.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<div id="header">
+    <a href="/Employees" id="logo">3JR <img src="../public/clock.png" id="clock-image"> </a>
+    <ul id="menu">
+        <li><a href="/Employees/logon"><img src="../public/home.png" id="home"> <span>Home</span></a></li>
+        <li><a href="/employees/clockin-out"><span>Clock In/Out</span></a></li>
+        <li><a href="/employees/manage"><span>Manage</span></a></li>
+        <li><a href="/employees/logout"><span>Logout</span></a></li>
+    </ul>
+</div>
+<h1 id="title">Employee Profile</h1>
+<!--#employees}}-->
+<form class="Profile">
+    <fieldset class="profileField">
+        <legend>Profile</legend>
+        <span id="top-field">Username:</span>
+        <input type="text" name="username" id="top-field" value="jrolling"><!--value="username}}"--><br/>
+        <span>First Name:</span>
+        <input type="text" name="FirstName" value="James"><!--value="FirstName}}"--><br/>
+        <span>Last Name:</span>
+        <input type="text" name="LastName" value="Rolling"><!--value="LastName}}"--><br/>
+        <span>Date of Birth:</span>
+        <input type="text" name="dob" id="dob" value="06/01/1990"><!--value="dob}}"--><br/>
+        <span name="gender" id="gender"><!--value="\gender}}"-->Gender:</span>
+        <input class="w3-radio" type="radio" name="gender" value="Male" checked>
+        <label>Male</label>
+        <input class="w3-radio" type="radio" name="gender" value="Female">
+        <label>Female</label>
+        </br>
+        <span>Address:</span>
+        <input type="text" name="Address" value="9282 Lightwave Avenue"><!--value="Address}}"--><br/>
+        <span>Phone Number:</span>
+        <input type="text" name="PhoneNo" value="8588523241"><!--value="PhoneNo}}"--><br/>
+        <span>Email Address:</span>
+        <input type="text" name="Email" value="jrolling@gmail.com"><!--value="Email}}"--><br/>
+        <span>Dependent(s):</span>
+        <input type="text" name="Dependents" value="Laura Rolling"><!--value="Dependents}}"--><br/>
+        <span>Position:</span><input type="text" name="Position" value="HR"><!--value="Position}}"--><br/>
+    </fieldset>
+
+    <fieldset class="history">
+        <legend>Working History</legend>
+        <span id="top-field">SSN:</span>
+        <input type="text" name="SSN" id="top-field" value="123-45-6789"><!--value="Salary}}"--><br/>
+        <span id="Salary">Salary:</span>
+        <input type="text" name="Salary" id="Salary" value="$140,000/year"><!--value="Salary}}"--><br/>
+        <span>Start Date:</span>
+        <input type="text" name="StartDate" value="04/01/2012"><!--value="StartDate}}"--><br/>
+        <span>Benefits:</span>
+        <input type="textarea" name="Benefits" value="Insurance"><!--value="Benefits}}"--><br/>
+        <span>Paid Leave:</span>
+        <input type="text" name="PaidLeave" value="12"><!--value="PaidLeave}}"--><br/>
+        <span>Unpaid Leave:</span>
+        <input type="text" name="UnpaidLeave" value="5"><!--value="UnpaidLeave}}"--><br/>
+    </fieldset>
+</form>
+<!--/employees}}-->
+
+
+<div class= "footer">
+    <ul class="footer-list">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Career</a></li>
+    </ul>
+    <div class="footer-copyright">&copy; 2018 3JR.com. All Rights Reserved.</div>
+</div>
+<!--user}}-->
+</body>
+</html>

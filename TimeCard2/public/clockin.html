@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>Clock In/Out</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script type="text/javascript" src="index.js"></script>
+
+    <script type="text/javascript">
+         <!--
+        function clockin() {
+            document.getElementById('timepunches').innerHTML = Date() + 'Your Clock-in time punch was saved.'
+			alert(Date() + 'Your Clock-in time punch was saved.');
+            window.open("Homepage.html");
+        }
+        function clockout() {
+            document.getElementById('timepunches').innerHTML = Date() + 'Your Clock-out time punch was saved.'
+			alert(Date() + 'Your Clock-out time punch was saved.');
+            window.open("Homepage.html");
+        }
+        //-->
+    </script>
+</head>
+
+<body>
+    <div id="header">
+        <a href="/Employees" id="logo">3JR <img src="clock.png" id="clock-image"> </a>
+        <ul id="menu">
+            <li><a href="Homepage.html"><img src="home.png" id="home"> <span>Home</span></a></li>
+            <li><a href="/"><span>Clock In/Out</span></a></li>
+            <li><a href="index.html"><span>Logout</span></a></li>
+        </ul>
+    </div>
+    <button type="button" onclick="clockin()" class="clock" id="clock-in">Clock In</button>
+    <br />
+    <br />
+    <button type="button" onclick="clockout()" class="clock" id="clock-out">Clock Out</button>
+    <textarea id="timepunches" rows="4" cols="50"></textarea>
+    <div class="footer">
+        <ul class="footer-list">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Career</a></li>
+        </ul>
+        <div class="footer-copyright">&copy; 2018 3JR.com. All Rights Reserved.</div>
+    </div>
+</body>
+</html>

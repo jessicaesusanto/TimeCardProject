@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+	<title>Time Management</title>
+	<link rel="stylesheet" type="text/css" href="../public/stylesheet.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script type="text/javascript">
+	
+	function validation() {
+            var f = document.forms["profile"]["fname"].value;
+            
+    if (f =="") {
+        alert("Please enter FirstName!");
+        return false;
+    }
+	}
+	</script>
+</head>
+
+<body>
+<div id="header">
+	<a href="/Employees" id="logo">3JR <img src="../public/clock.png" id="clock-image"> </a>
+	<ul id="menu">
+		<li><a href="/Employees"><img src="../public/home.png" id="home"> <span>Home</span></a></li>
+		<li><a href="/employees/clockin-out"><span>Clock In/Out</span></a></li>
+		<li><a href="/employees/manage"><span>Manage</span></a></li>
+		<li><a href="/employees/logout"><span>Logout</span></a></li>
+	</ul>
+</div>
+
+<h1 id="title">Employee Time Entry Record</h1>
+ <form class="Profile">
+	 <fieldset class="profileField"onsubmit="return validation>
+		<legend>Profile</legend>
+		<div class="headRow">
+	 <table>
+		<tr>
+			<th>Date</th>
+			<th>Employee Naame</th>
+			<th>TimeIn</th>
+			<th>TimeOut</th>
+			<th>TotalHours</th>
+		</tr>
+		<tr>
+			<td><input type="text" = name =" "></td>
+			<td><input type="text" = name =" "></td>
+			<td><input type="text" = name =" "></td>
+			<td><input type="text" = name =" "></td>
+			<td><input type="text" = name =" "></td>
+		</tr>
+	 </table>
+	 </fieldset>
+ </form>
+<div class= "footer">
+	<ul class="footer-list">
+		<li><a href="#">About Us</a></li>
+		<li><a href="#">Contact Us</a></li>
+		<li><a href="#">Career</a></li>
+	</ul>
+	<div class="footer-copyright">&copy; 2018 3JR.com. All Rights Reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script type="text/javascript" src="index.js"></script>
+    
+    <script type="text/javascript">
+        
+        function validation() {
+            var u = document.forms["loginform"]["uname"].value;
+            var p = document.forms["loginform"]["pwd"].value;
+
+            if (u == "") {
+                alert("Please enter your username.");
+			
+                return false;
+            }
+		    if (p == ""){
+			   alert("Please enter your password");
+			   return false;
+			}
+			if (p.length <6){
+			alert("Please enter at least 6 characters!");
+			return false;
+			}
+			
+			
+        
+			
+            if (/^[0-9a-zA-Z]\w{2,10}$/.test(u)) {
+                window.open("Homepage.html");
+                return true;
+            }
+            else {
+                alert("Your username may only contain characters and numbers.");
+                return false;
+            }
+        }
+        
+    </script>
+</head>
+
+<body>
+    <div id="header">
+        <a href="/Employees" id="logo">3JR <img src="clock.png" id="clock-image"> </a>
+    </div>
+
+    <form id="block-one">
+        <img src="user.png" class="user">
+    </form>
+
+    <div class="login-page">
+        <div class="form">
+            
+            <form name="loginform" class="login" onsubmit="return validation()">
+                <input type="text" placeholder="username" name ="uname" value="" />
+                <input type="password" placeholder="password" name="pwd" value="" />
+                <button onsubmit="alert(" Welcome to 3JR")>submit</button>
+                <p class="message">Not registered? <a href="#">Create an account</a></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <ul class="footer-list">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Career</a></li>
+        </ul>
+        <div class="footer-copyright">&copy; 2018 3JR.com. All Rights Reserved.</div>
+    </div>
+</body>
+</html>

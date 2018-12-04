@@ -1,0 +1,76 @@
+<!--This file lets the user log in-->
+<html>
+<head>
+    <title>Login</title>                 <!--Title of the page-->
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="../public/stylesheet.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <script type="text/javascript">      // Javascript to validate login form below
+        function validation() {
+            var u = document.forms["loginform"]["username"].value;
+            var p = document.forms["loginform"]["password"].value;
+
+            if (u == "") {
+                alert("Please enter your username.");
+                // If username field is empty, an alert will appear and prevent user to log in
+                return false;
+            }
+            if (p == ""){
+                alert("Please enter your password");
+                // If password field is empty, an alert will appear and prevent user to log in
+                return false;
+            }
+            if (p.length <6){
+                alert("Please enter at least 6 characters!");
+                // If inputted password is less than 6 characters long, an alert will appear and prevent user to log in
+                return false;
+            }
+
+            if (/^[0-9a-zA-Z]\w{2,10}$/.test(u)) {
+                // If inputted username is either character or number, an alert shall not appear
+                return true;
+            }
+            else {
+                alert("Your username may only contain characters and numbers.");
+                // If inputted username is using neither character nor number, an alert will appear and prevent user to log in
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+<div id="header">                       <!--Header of the page-->
+    <a href="/Employees" id="logo">3JR <img src="../public/clock.png" id="clock-image"> </a>
+</div>
+
+<form id="block-one">
+    <img src="../public/user.png" class="user">
+    <!--This shows the user image beside the login form-->
+</form>
+
+<div class="login-page">
+    <div class="form">
+        <form name="loginform" action="/employees/logon" class="login" onsubmit="return validation()">
+            <!--Login form that will validate the user through validation() function-->
+            <input type="text" placeholder="username" name ="username"/>        <!--Records the username-->
+            <input type="password" placeholder="password" name="password"/>     <!--Records the password-->
+            <button onsubmit="alert('Welcome to 3JR')">submit</button>          <!--Submits the form-->
+            <p class="message">Not registered? <a href="/employees/register">Create an account</a></p>
+            <!--Link which lets user whose password is not registered in the system to the registration page-->
+        </form>
+    </div>
+</div>
+
+<div class="footer">                 <!--Footer of the page-->
+    <ul class="footer-list">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Career</a></li>
+    </ul>
+    <div class="footer-copyright">&copy; 2018 3JR.com. All Rights Reserved.</div>
+</div>
+</body>
+</html>
